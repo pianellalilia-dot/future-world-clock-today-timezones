@@ -8,23 +8,26 @@ function showCurrentLocation() {
   cityTime.innerHTML = currentCityTime;
 }
 
-function showCity(city) {
+function showCity(event) {
   let cityList = document.querySelector("#clock-worlds");
-  let newCity = `     <div class="each-city" id="each-city">
+  let selectedCity = document.querySelector("#cities");
+  let selectedCityName = selectedCity.value;
+  let selectedCityTime = moment().tz(selectedCityName).format(`h:mm:ss A`);
+  let selectedCityDate = moment().tz(selectedCityName).format(`MMMM Do YYYY`);
+  selectedCityName = selectedCityName.split("/")[1];
+
+  cityList.innerHTML += `     <div class="each-city" id="each-city">
           <div class="each-city-remove-button"><button>-</button></div>
           <div>
-            <div class="each-city-name">Current city</div>
-            <div class="each-city-date" id="each-city-date"></div>
+            <div class="each-city-name">
+  ${selectedCityName}</div>
+            <div class="each-city-date" id="each-city-date"> ${selectedCityDate}</div>
           </div>
-          <div class="each-city-time" id="each-city-time"></div>
+          <div class="each-city-time" id="each-city-time">  ${selectedCityTime} </div>
         </div>`;
-  cityList.innerHTML += newCity;
 }
 
-function handleCity(event) {
-  showCity();
-}
 setInterval(showCurrentLocation, 1000);
 
 let optionalCities = document.querySelector("#cities");
-optionalCities.addEventListener("change", handleCity);
+optionalCities.addEventListener("change", showCity);
