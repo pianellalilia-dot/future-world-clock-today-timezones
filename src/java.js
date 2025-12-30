@@ -29,15 +29,21 @@ function showCity() {
   let selectedCity = document.querySelector("#cities");
   let selectedCityTimezone = selectedCity.value;
   if (selectedCityTimezone === "") {
+    return null;
+  }
+  if (selectedCityTimezone === "current") {
     selectedCityTimezone = moment.tz.guess();
   }
-  let selectedCityTime = moment().tz(selectedCityTimezone).format(`h:mm:ss A`);
-  let selectedCityDate = moment()
-    .tz(selectedCityTimezone)
-    .format(`MMMM Do YYYY`);
-  let selectedCityName = selectedCityTimezone.split("/")[1];
-  let cityList = document.querySelector("#clock-worlds");
-  cityList.innerHTML += `<div class="each-city" id="each-city">
+  if (selectedCityTimezone !== "current") {
+    let selectedCityTime = moment()
+      .tz(selectedCityTimezone)
+      .format(`h:mm:ss A`);
+    let selectedCityDate = moment()
+      .tz(selectedCityTimezone)
+      .format(`MMMM Do YYYY`);
+    let selectedCityName = selectedCityTimezone.split("/")[1];
+    let cityList = document.querySelector("#clock-worlds");
+    cityList.innerHTML += `<div class="each-city" id="each-city">
           <div class="each-city-remove-button"><button>-</button></div>
           <div>
             <div class="each-city-name">${selectedCityName}</div>
@@ -46,19 +52,23 @@ function showCity() {
           </div>
           <div class="each-city-time" id="each-city-time">${selectedCityTime}</div>
         </div>`;
+  }
 }
 
 function handleSelectedCity(event) {
   let selectedCity = document.querySelector("#cities");
   let selectedCityTimezone = selectedCity.value;
   let arrayWorldClockCities = document.querySelectorAll(".each-city-timezone");
-  let cityIsFound = false;
+  if (selectedCityTimezone === "current") {
+  }
+
+  let cityFoundCheck = false;
   for (let index = 0; index < arrayWorldClockCities.length; index++) {
     if (selectedCityTimezone === arrayWorldClockCities[index].innerHTML) {
-      cityIsFound = true;
+      cityFoundCheck = true;
     }
   }
-  if (cityIsFound === false) {
+  if (cityFoundCheck === false) {
     showCity();
   }
 }
