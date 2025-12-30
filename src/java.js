@@ -59,7 +59,9 @@ function handleSelectedCity(event) {
   let selectedCity = document.querySelector("#cities");
   let selectedCityTimezone = selectedCity.value;
   let arrayWorldClockCities = document.querySelectorAll(".each-city-timezone");
+
   if (selectedCityTimezone === "current") {
+    selectedCityTimezone = moment.tz.guess();
   }
 
   let cityFoundCheck = false;
