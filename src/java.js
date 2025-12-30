@@ -48,19 +48,24 @@ function showCity() {
 function handleSelectedCity(event) {
   let selectedCity = document.querySelector("#cities");
   let selectedCityTimezone = selectedCity.value;
-  console.log(selectedCityTimezone);
   let arrayWorldClockCities = document.querySelectorAll(".each-city-timezone");
-  console.log(arrayWorldClockCities);
-  let dummyVariable = false;
+  let cityIsFound = false;
   for (let index = 0; index < arrayWorldClockCities.length; index++) {
     if (selectedCityTimezone === arrayWorldClockCities[index].innerHTML) {
-      dummyVariable = true;
+      cityIsFound = true;
     }
   }
-  if (dummyVariable === false) {
+  if (cityIsFound === false) {
     showCity();
   }
 }
+
+function removeCity(event) {
+  if (event.target.tagName === "BUTTON") {
+    event.target.closest(".each-city").remove();
+  }
+}
+
 let firstCityTimeZone = document.querySelector("#first-city-time-zone");
 firstCityTimeZone.innerHTML = moment.tz.guess();
 showSelectedLocation();
@@ -68,3 +73,6 @@ setInterval(showSelectedLocation, 1000);
 
 let optionalCities = document.querySelector("#cities");
 optionalCities.addEventListener("change", handleSelectedCity);
+
+let cityList = document.querySelector("#clock-worlds");
+cityList.addEventListener("click", removeCity);
