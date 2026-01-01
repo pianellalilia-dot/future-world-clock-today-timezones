@@ -58,10 +58,10 @@ main .each-city-remove-button button {
   border-radius: 10px;
   font-weight: 700;
   font-size: 18px;
-  position: relative;
-  top: 10px;
-  left: 10px;
   transition: all 200ms ease-in-out;
+  flex: 1;
+  text-align: left;
+  margin: 10px 0 0 0;
 }
 
 main .each-city-remove-button button:hover {
@@ -72,17 +72,20 @@ main .each-city-remove-button button:hover {
 main .each-city {
   display: flex;
   justify-content: space-between;
+  width: 100%;
   border-bottom: 1px dashed #938fa1;
-  padding: 20px 20px 43px;
+  padding: 20px 10px 10px 10px;
 }
 main .each-city:last-child {
   border-bottom: none;
   padding-bottom: 10px;
 }
 main .each-city-central-box {
-  position: absolute;
-  left: 730px;
+  flex: 2;
+  text-align: left;
+  padding: 0 15px 0 15px;
 }
+
 main .each-city-name {
   font-size: 32px;
 }
@@ -93,8 +96,9 @@ main .each-city-date {
 
 main .each-city-time {
   font-size: 48px;
-  position: relative;
-  right: 8px;
+  flex: 3;
+  text-align: left;
+  padding: 0 15px;
 }
 footer {
   text-align: center;
