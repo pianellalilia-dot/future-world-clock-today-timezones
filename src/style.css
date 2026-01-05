@@ -2,10 +2,10 @@ body {
   color: #272142;
   background: radial-gradient(
     circle at -8.9% 51.2%,
-    rgb(255, 124, 0) 0%,
-    rgb(255, 124, 0) 15.9%,
-    rgb(255, 163, 77) 15.9%,
-    rgb(255, 163, 77) 24.4%,
+    rgb(230, 243, 232) 0%,
+    rgb(230, 243, 232) 15.9%,
+    rgb(230, 243, 232) 15.9%,
+    rgb(77, 106, 97) 24.4%,
     rgb(19, 30, 37) 24.5%,
     rgb(19, 30, 37) 66%
   );
@@ -52,9 +52,9 @@ header .cities-list {
   font-style: normal;
 }
 main .each-city-remove-button button {
-  background: rgb(255, 124, 0);
+  background: rgb(77, 106, 97);
   padding: 6px 12px;
-  border: 1px solid rgb(255, 124, 0);
+  border: 1px solid rgb(77, 106, 97);
   border-radius: 10px;
   font-weight: 700;
   font-size: 18px;
@@ -65,7 +65,8 @@ main .each-city-remove-button button {
 }
 
 main .each-city-remove-button button:hover {
-  background-color: rgb(255, 163, 77);
+  background-color: rgb(215, 237, 219);
+  border: rgb(215, 237, 219);
   cursor: pointer;
 }
 
@@ -107,5 +108,5 @@ footer {
   margin-top: 5px;
 }
 footer a {
-  color: rgb(255, 124, 0);
+  color: rgb(230, 243, 232);
 }
