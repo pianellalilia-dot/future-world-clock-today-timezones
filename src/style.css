@@ -51,6 +51,9 @@ header .cities-list {
   font-weight: 400;
   font-style: normal;
 }
+main .each-city-remove-button {
+  padding: 15px 3px;
+}
 main .each-city-remove-button button {
   background: rgb(215, 237, 219);
   padding: 6px 12px;
@@ -116,6 +119,7 @@ footer a {
   main .each-city-time {
     display: block;
     font-size: 48px;
+    margin-top: 10px;
     padding: 5px 0;
     text-align: center;
   }
