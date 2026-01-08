@@ -52,27 +52,32 @@ header .cities-list {
   font-style: normal;
 }
 main .each-city-remove-button button {
-  background: rgb(77, 106, 97);
+  display: block;
+  background-color: rgb(215, 237, 219);
+  border: rgb(215, 237, 219);
+
   padding: 6px 12px;
-  border: 1px solid rgb(77, 106, 97);
+
   border-radius: 10px;
   font-weight: 700;
   font-size: 18px;
   transition: all 200ms ease-in-out;
-  flex: 1;
   text-align: center;
   margin: 10px 0 0 0;
 }
 
 main .each-city-remove-button button:hover {
-  background-color: rgb(215, 237, 219);
-  border: rgb(215, 237, 219);
+  background: rgb(77, 106, 97);
+  border: 1px solid rgb(77, 106, 97);
   cursor: pointer;
 }
-
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 main .each-city {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   border-bottom: 1px dashed #938fa1;
   padding: 20px 10px 10px 10px;
@@ -109,4 +114,16 @@ footer {
 }
 footer a {
   color: rgb(230, 243, 232);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .each-city-name,
+  .each-city-timezone,
+  .each-city-date {
+    text-align: left;
+  }
 }

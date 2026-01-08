@@ -44,14 +44,15 @@ function showCity() {
     let selectedCityName = selectedCityTimezone.split("/")[1];
     let cityList = document.querySelector("#clock-worlds");
     cityList.innerHTML += `<div class="each-city" id="each-city">
-          <div class="each-city-remove-button"><button>Remove <br />City</button></div>
+          <div class="each-city-remove-button" title="Remove City"><button> - </button></div>
+         <div class="grid">
           <div class="each-city-central-box">
             <div class="each-city-name">${selectedCityName}</div>
             <div class="each-city-timezone">${selectedCityTimezone}</div>
             <div class="each-city-date" id="each-city-date">${selectedCityDate}</div>
           </div>
           <div class="each-city-time" id="each-city-time">${selectedCityTime}</div>
-        </div>`;
+        </div></div>`;
   }
 }
 
