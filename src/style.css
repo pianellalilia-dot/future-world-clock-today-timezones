@@ -34,8 +34,8 @@ h1 {
 
 header label {
   display: block;
-  margin: 0 auto 5px;
-  font-size: 18px;
+  margin: 0 auto 15px;
+  font-size: 16px;
   text-align: center;
 }
 header .cities-list {
@@ -108,7 +108,7 @@ main .each-city-date {
 main .each-city-time {
   font-size: 38px;
   flex-wrap: wrap;
-  text-align: right;
+  text-align: center;
   padding: 0 15px;
 }
 footer {

@@ -85,9 +85,9 @@ function removeCity(event) {
   }
 }
 
-let firstCityTimeZone = document.querySelector("#first-city-time-zone");
-firstCityTimeZone.innerHTML = moment.tz.guess();
-showSelectedLocation();
+// let firstCityTimeZone = document.querySelector("#first-city-time-zone");
+// firstCityTimeZone.innerHTML = moment.tz.guess();
+// showSelectedLocation();
 setInterval(showSelectedLocation, 1000);
 
 let optionalCities = document.querySelector("#cities");

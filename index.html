@@ -19,13 +19,16 @@
       <header>
         <h1>World Clock</h1>
         <label for="cities"
-          >Add or remove cities in different time zones to the world
-          clock</label
+          >Use the list of cities provided below to add cities to the World
+          Clock. You can always remove cities by clicking on the specific button
+          below each city.</label
         >
 
         <select name="city" id="cities" class="cities-list">
           <option value="">Cities that can be added</option>
-          <option value="current">Current Location</option>
+          <option value="current">
+            Current Location (it guesses where you are)
+          </option>
           <option value="Australia/Queensland">Queensland</option>
           <option value="Asia/Bangkok">Bangkok</option>
           <option value="Europe/Stockholm">Stockholm</option>
@@ -36,7 +39,7 @@
       </header>
       <main>
         <div id="clock-worlds">
-          <div class="each-city">
+          <!-- <div class="each-city">
             <div class="grid">
               <div class="each-city-central-box">
                 <div class="each-city-name">Current Location</div>
@@ -50,7 +53,7 @@
                 <button>Remove City</button>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </main>
     </div>
